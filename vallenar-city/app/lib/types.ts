@@ -1,0 +1,1 @@
+export type PublicationTypes = "house" | "apartment" | "room";

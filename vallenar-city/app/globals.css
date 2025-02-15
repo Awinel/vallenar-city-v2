@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-01: #264653;
+  --color-02: #2A9D8F;
+  --color-03: #F4A261;
+  --color-04: #E76F51;
+  --color-05: #E9C46A;
+  --white: snow;
+  --black: #0B1215;
+  
+  --font-lilita-one: 'Lilita One', sans-serif;
+  --font-nunito: 'Nunito', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* body {
+  padding: 1rem;
+} */
+
+h1 {
+  font-family: var(--font-lilita-one);
+  font-size: xx-large;
+}
+
+h2 {
+  font-family: var(--font-nunito);
+  font-weight: 800;
+  font-size: x-large;
+}
+
+h3 {
+  font-family: var(--font-nunito);
+  font-weight: 700;
+  font-size: large;
+}
+
+h4 {
+  font-family: var(--font-nunito);
+  font-weight: 600;
+  font-size: medium;
+}
+
+h5 {
+  font-family: var(--font-nunito);
+  font-weight: 500;
+}
+
+p {
+  font-family: var(--font-nunito);
+  font-weight: 400;
+}
