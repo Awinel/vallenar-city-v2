@@ -54,3 +54,5 @@ export type UserStatusProps = {
 export type CardProps = {
     title: string
 }
+
+export type Day = number | null;
