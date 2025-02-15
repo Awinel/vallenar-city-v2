@@ -50,3 +50,7 @@ export type Publication = {
 export type UserStatusProps = {
     isAuthenticated: boolean;
     };
+
+export type CardProps = {
+    title: string
+}
