@@ -1,1 +1,1 @@
-export type PublicationTypes = "house" | "apartment" | "room";
+export type PublicationTypes = "house" | "appartment" | "room";
