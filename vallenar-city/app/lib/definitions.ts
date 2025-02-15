@@ -38,6 +38,12 @@ export type Publication = {
     id: number
     title: string
     type: PublicationTypes
+    address: string
+    addressNumber: number
+    price: number
+    phone: number
+    description: string
+    image: string
 
 }
 
