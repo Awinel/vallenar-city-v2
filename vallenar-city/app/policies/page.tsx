@@ -29,7 +29,7 @@ export default function Page() {
       </h2>
       <h2
         className={`${lilitaOne.className} text-xl md:text-2xl`}
-        id="terms of use"
+        id="terms-of-use"
       >
         Terminos y Condiciones
         <p
