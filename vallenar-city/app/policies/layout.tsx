@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="">
-      <div className="">
+    <div className="flex flex-col text-center">
+      <div className="bg-[var(--color-04)]">
         <Image
           alt="Vallenar City Logo"
           src="logo.svg"
