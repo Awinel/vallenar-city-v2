@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+#localfolders
+/seed
+/lib/placeholder-data.ts
 # testing
 /coverage
 
