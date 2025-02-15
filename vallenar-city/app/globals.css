@@ -25,36 +25,3 @@
 /* body {
   padding: 1rem;
 } */
-
-h1 {
-  font-family: var(--font-lilita-one);
-  font-size: xx-large;
-}
-
-h2 {
-  font-family: var(--font-nunito);
-  font-weight: 800;
-  font-size: x-large;
-}
-
-h3 {
-  font-family: var(--font-nunito);
-  font-weight: 700;
-  font-size: large;
-}
-
-h4 {
-  font-family: var(--font-nunito);
-  font-weight: 600;
-  font-size: medium;
-}
-
-h5 {
-  font-family: var(--font-nunito);
-  font-weight: 500;
-}
-
-p {
-  font-family: var(--font-nunito);
-  font-weight: 400;
-}
