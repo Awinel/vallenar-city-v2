@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { nunito } from "./fonts";
 
 const links = [
@@ -36,7 +37,7 @@ export const NavLinks = () => {
     <div className="flex flex-row justify-evenly bg-[var(--color-02)] flex-wrap">
       {links.map((link) => {
         return (
-          <a
+          <Link
             key={link.name}
             href={link.href}
             className={`${nunito.className} font-bold text-base text-[var(--white)]`}
@@ -44,7 +45,7 @@ export const NavLinks = () => {
             <p className="p-2 m-3 border-[var(--color-02)] border-b-2 hover:border-b-2 hover:border-[var(--white)] transition duration-500 ease-in-out">
               {link.name}
             </p>
-          </a>
+          </Link>
         );
       })}
     </div>
