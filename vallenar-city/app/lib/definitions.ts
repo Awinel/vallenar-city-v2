@@ -1,7 +1,7 @@
 import { PublicationTypes } from "./types";
 
 export type User = {
-    id: number;
+    id: string;
     username: string;
     name: string;
     email: string;
@@ -9,7 +9,7 @@ export type User = {
 };
 
 export type Store = {
-    id: number;
+    id: string;
     name: string;
     type: string;
     address: string;
@@ -23,7 +23,7 @@ export type Store = {
 };
 
 export type Event = {
-    id: number
+    id: string
     name: string
     type: string
     address: string
@@ -35,7 +35,7 @@ export type Event = {
 };
 
 export type Publication = {
-    id: number
+    id: string
     title: string
     type: PublicationTypes
     address: string
@@ -52,6 +52,7 @@ export type UserStatusProps = {
     };
 
 export type StoreCardProps = {
+    id: string;
     title: string;
     description: string;
     image: string;

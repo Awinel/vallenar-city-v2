@@ -25,6 +25,23 @@ export async function fetchStores() {
     }
 }
 
+export async function getOneStore(storeId: string) {
+    try {
+      const data = await sql<Store[]>`
+        SELECT * FROM stores WHERE id = ${storeId}`;
+  
+      if (data.length === 0) {
+        throw new Error(`Store with ID "${storeId}" not found.`);
+      }
+  
+      return data[0]; // Return the first store found
+    } catch (error) {
+      console.error("Database Error:", error);
+      throw new Error("Failed to fetch store data.");
+    }
+  }
+
+
 export async function fetchPublications() {
     try {
         const data = await sql<Publication[]>`SELECT * FROM publications`;

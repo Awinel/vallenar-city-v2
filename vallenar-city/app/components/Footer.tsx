@@ -5,7 +5,7 @@ import { NavLinks } from "../ui/policies/nav-links";
 
 const Footer = () => {
   return (
-    <footer className="grid grid-cols-3 m-0 text-sm text-[var(--white)] bg-[var(--color-01)]">
+    <footer className="grid grid-cols-3 m-0 text-sm text-[var(--white)] bg-[var(--color-01)] h-dvh]">
       <div className="flex flex-col text-center m-2 justify-center">
         <NavLinks />
       </div>

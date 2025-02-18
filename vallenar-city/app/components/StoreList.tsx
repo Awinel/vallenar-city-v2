@@ -59,6 +59,7 @@ export default async function StoreList() {
             title={store.name}
             description={store.description}
             image={store.image || "https://via.placeholder.com/150"}
+            id={store.id}
           />
         ))
       ) : (
