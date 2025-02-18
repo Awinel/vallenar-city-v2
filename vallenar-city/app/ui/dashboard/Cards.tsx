@@ -1,8 +1,7 @@
-import { CardProps } from "@/app/lib/definitions";
 import React from "react";
 
-const Cards = (props: CardProps) => {
-  return <div>{props.title}</div>;
+const Cards = () => {
+  return <div>Card</div>;
 };
 
 export default Cards;
