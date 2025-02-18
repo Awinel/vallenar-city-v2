@@ -51,8 +51,10 @@ export type UserStatusProps = {
     isAuthenticated: boolean;
     };
 
-export type CardProps = {
-    title: string
+export type StoreCardProps = {
+    title: string;
+    description: string;
+    image: string;
 }
 
 export type Day = number | null;
