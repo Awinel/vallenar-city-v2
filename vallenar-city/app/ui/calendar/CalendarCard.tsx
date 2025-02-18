@@ -44,11 +44,12 @@ const Calendar = () => {
   };
 
   const isToday = (day: number) => {
-    return (
+    const result =
       day === today.getDate() &&
       currentDate.getMonth() === today.getMonth() &&
-      currentDate.getFullYear() === today.getFullYear()
-    );
+      currentDate.getFullYear() === today.getFullYear();
+    console.log(`Checking ${day}, is today: ${result}`);
+    return result;
   };
 
   const handleClick = (day: number) => {
@@ -99,19 +100,21 @@ const Calendar = () => {
               className="text-center bg-slate-200 border-2 border-slate-300 hover:bg-slate-400 cursor-pointer"
             ></div>
           ))}
-          {Array.from({ length: daysInMonth }).map((_, i) => (
-            <div
-              key={i}
-              className={`text-center p-2 bg-slate-200 border-2 border-slate-300 hover:bg-slate-400 cursor-pointer ${
-                isToday(i + 1)
-                  ? "bg-green-400 hover:bg-green-700 border-black"
-                  : "bg-slate-00 border-2 border-slate-300 hover:bg-slate-400"
-              }`}
-              onClick={() => handleClick(i + 1)}
-            >
-              {i + 1}
-            </div>
-          ))}
+          {Array.from({ length: daysInMonth }).map((_, i) => {
+            const todayClass = isToday(i + 1)
+              ? "bg-green-400 hover:bg-green-700 border-2 border-black"
+              : "bg-slate-200 border-2 border-slate-300 hover:bg-slate-400";
+
+            return (
+              <div
+                key={i}
+                className={`text-center p-2 cursor-pointer ${todayClass}`}
+                onClick={() => handleClick(i + 1)}
+              >
+                {i + 1}
+              </div>
+            );
+          })}
         </div>
       ) : (
         <div className="bg-slate-200 w-[400px] border-2 border-t-0 border-slate-300">
