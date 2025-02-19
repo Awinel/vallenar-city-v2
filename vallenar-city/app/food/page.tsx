@@ -1,5 +1,5 @@
-import ListClient from "../ui/store/StoreList";
+import FoodList from "../ui/food/FoodList";
 
 export default function Food() {
-  return <ListClient />;
+  return <FoodList />;
 }

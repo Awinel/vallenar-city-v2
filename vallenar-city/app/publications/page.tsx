@@ -1,13 +1,5 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import { Nav } from "../ui/nav";
+import PublicationList from "../ui/publications/PublicationList";
 
-export default function Home() {
-  return (
-    <main>
-      <Header />
-      <Nav />
-      <Footer />
-    </main>
-  );
+export default function Food() {
+  return <PublicationList />;
 }

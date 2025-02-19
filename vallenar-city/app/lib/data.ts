@@ -16,7 +16,7 @@ export async function fetchCalendarEvents() {
 
 export async function fetchStores() {
     try {
-        const data = await sql<Store[]>`SELECT * FROM stores WHERE type NOT IN ('food', 'style', 'services') `;
+        const data = await sql<Store[]>`SELECT * FROM stores WHERE type NOT IN ('Food', 'Style', 'Services') `;
 
         return data;
     } catch (error) {
@@ -33,7 +33,7 @@ export async function fetchStoreById(id: string) {
 
 export async function fetchFood() {
     try {
-        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'food`;
+        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'Food'`;
 
         return data;
     } catch (error) {
@@ -41,10 +41,15 @@ export async function fetchFood() {
         throw new Error("Failed to fetch stores data.");
     }
 }
+
+export async function fetchFoodById(id: string) {
+    const stores = await fetchFood(); // Fetch all Food
+    return stores.find((store) => store.id === id) || null;
+  }
 
 export async function fetchStyle() {
     try {
-        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'style'`;
+        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'Style'`;
 
         return data;
     } catch (error) {
@@ -52,10 +57,15 @@ export async function fetchStyle() {
         throw new Error("Failed to fetch stores data.");
     }
 }
+
+export async function fetchStyleById(id: string) {
+    const stores = await fetchStyle(); // Fetch all Food
+    return stores.find((store) => store.id === id) || null;
+  }
 
 export async function fetchServices() {
     try {
-        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'services' `;
+        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'Services'`;
 
         return data;
     } catch (error) {
@@ -64,20 +74,9 @@ export async function fetchServices() {
     }
 }
 
-export async function getOneStore(storeId: string) {
-    try {
-      const data = await sql<Store[]>`
-        SELECT * FROM stores WHERE id = ${storeId}`;
-  
-      if (data.length === 0) {
-        throw new Error(`Store with ID "${storeId}" not found.`);
-      }
-  
-      return data[0]; // Return the first store found
-    } catch (error) {
-      console.error("Database Error:", error);
-      throw new Error("Failed to fetch store data.");
-    }
+export async function fetchServicesById(id: string) {
+    const stores = await fetchServices(); // Fetch all Food
+    return stores.find((store) => store.id === id) || null;
   }
 
 
@@ -91,6 +90,11 @@ export async function fetchPublications() {
         throw new Error("Failed to fetch publications data.");
     }
 }
+
+export async function fetchPublicationById(id: string) {
+    const stores = await fetchPublications(); // Fetch all Food
+    return stores.find((store) => store.id === id) || null;
+  }
 
 export async function fetchUsers() {
     try {
