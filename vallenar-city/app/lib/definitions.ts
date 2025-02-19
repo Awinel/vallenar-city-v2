@@ -13,7 +13,7 @@ export type Store = {
     name: string;
     type?: string;
     address?: string;
-    addressNumber?: number;
+    addressnumber?: number;
     phone?: number;
     instagram?: string;
     facebook?: string;
@@ -40,14 +40,14 @@ export type Publication = {
     title: string
     type: PublicationTypes
     address: string
-    addressNumber: number
+    addressnumber: number
     price: number
     phone: number
     description: string
     image: string
-    image01?: string | null
-    image02?: string | null
-    image03?: string | null
+    image_01?: string | null
+    image_02?: string | null
+    image_03?: string | null
 
 }
 

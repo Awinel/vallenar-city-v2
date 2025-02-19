@@ -5,7 +5,7 @@ export default async function PublicationsList() {
   const publications = await fetchPublications(); // Server-side fetching
 
   return (
-    <div className="flex flex-col  gap-4">
+    <div className="flex flex-col gap-8 my-5">
       {publications.length > 0 ? (
         publications.map((publication) => (
           <CardsClient
@@ -15,13 +15,13 @@ export default async function PublicationsList() {
             description={publication.description}
             image={publication.image}
             address={publication.address}
-            addressNumber={publication.addressNumber}
+            addressnumber={publication.addressnumber}
             phone={publication.phone}
             price={publication.price}
             type={publication.type}
-            image01={publication.image01 || null}
-            image02={publication.image02 || null}
-            image03={publication.image03 || null}
+            image_01={publication.image_01 || null}
+            image_02={publication.image_02 || null}
+            image_03={publication.image_03 || null}
           />
         ))
       ) : (

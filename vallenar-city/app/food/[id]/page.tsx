@@ -25,7 +25,7 @@ export default async function FoodPage({ params }: PageProps) {
     <div className="max-w-2xl mx-auto p-6">
       <h2 className="text-3xl font-bold mt-4">{food.name}</h2>
       <Image
-        className="w-full rounded-md"
+        className="w-full rounded-md max-w-[300px]"
         src={`/img/${food.image}`}
         alt={food.name}
         width={500}
@@ -34,7 +34,7 @@ export default async function FoodPage({ params }: PageProps) {
 
       <p className="text-gray-700 mt-2">{food.description}</p>
       <p>
-        {food.address} {food.addressNumber}
+        {food.address} {food.addressnumber}
       </p>
       <div>
         <h3>Contacto:</h3>
@@ -46,9 +46,7 @@ export default async function FoodPage({ params }: PageProps) {
           <p>{food.facebook}</p>
         </Link>
       </div>
-      {food.facebook && <p>{food.facebook}</p>}
       <p>{food.email}</p>
-      {food.description && <p>{food.description}</p>}
       <p>{food.facebook}</p>
     </div>
   );
