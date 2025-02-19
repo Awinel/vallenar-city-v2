@@ -16,7 +16,46 @@ export async function fetchCalendarEvents() {
 
 export async function fetchStores() {
     try {
-        const data = await sql<Store[]>`SELECT * FROM stores`;
+        const data = await sql<Store[]>`SELECT * FROM stores WHERE type NOT IN ('food', 'style', 'services') `;
+
+        return data;
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error("Failed to fetch stores data.");
+    }
+}
+
+export async function fetchStoreById(id: string) {
+    const stores = await fetchStores(); // Fetch all stores
+    return stores.find((store) => store.id === id) || null;
+  }
+  
+
+export async function fetchFood() {
+    try {
+        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'food`;
+
+        return data;
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error("Failed to fetch stores data.");
+    }
+}
+
+export async function fetchStyle() {
+    try {
+        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'style'`;
+
+        return data;
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error("Failed to fetch stores data.");
+    }
+}
+
+export async function fetchServices() {
+    try {
+        const data = await sql<Store[]>`SELECT * FROM stores WHERE type = 'services' `;
 
         return data;
     } catch (error) {

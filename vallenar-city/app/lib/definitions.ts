@@ -9,17 +9,17 @@ export type User = {
 };
 
 export type Store = {
-    id: string;
+    id?: string;
     name: string;
-    type: string;
-    address: string;
-    addressNumber: number;
-    phone: number;
-    instagram: string;
-    facebook: string;
-    email: string;
-    description: string
-    image: string;
+    type?: string;
+    address?: string;
+    addressNumber?: number;
+    phone?: number;
+    instagram?: string;
+    facebook?: string;
+    email?: string;
+    description?: string
+    image?: string;
 };
 
 export type Event = {
@@ -50,12 +50,3 @@ export type Publication = {
 export type UserStatusProps = {
     isAuthenticated: boolean;
     };
-
-export type StoreCardProps = {
-    id: string;
-    title: string;
-    description: string;
-    image: string;
-}
-
-export type Day = number | null;

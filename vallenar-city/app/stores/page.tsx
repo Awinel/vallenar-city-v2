@@ -1,5 +1,5 @@
-import StoreList from "../components/StoreList";
+import StoreList from "../ui/store/StoreList";
 
-export default function Home() {
+export default function Store() {
   return <StoreList />;
 }
