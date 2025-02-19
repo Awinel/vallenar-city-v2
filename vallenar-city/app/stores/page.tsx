@@ -1,4 +1,4 @@
-import StoreList from "../ui/StoreList";
+import StoreList from "../ui/store/StoreList";
 
 export default function Store() {
   return <StoreList />;
