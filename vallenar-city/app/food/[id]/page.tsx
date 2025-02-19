@@ -8,7 +8,6 @@ interface PageProps {
 }
 
 export default async function FoodPage({ params }: PageProps) {
-  // const store = await fetchStoreById(params.id);
   const { id } = await params;
 
   if (!id) {

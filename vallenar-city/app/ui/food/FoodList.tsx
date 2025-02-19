@@ -17,7 +17,7 @@ export default async function FoodList() {
           />
         ))
       ) : (
-        <p>Sin Lugares de Comida por el momento</p>
+        <p>Sin lugares de comida por el momento</p>
       )}
     </div>
   );
