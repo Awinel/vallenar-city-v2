@@ -1,6 +1,7 @@
 import { fetchStoreById } from "@/app/lib/data"; // Create this function in your data file
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 interface StorePageProps {
   params: { id: string };
@@ -10,7 +11,7 @@ export default async function StorePage({ params }: StorePageProps) {
   const store = await fetchStoreById(params.id);
 
   if (!store) {
-    return <p className="text-center text-red-500">Store not found.</p>;
+    return notFound();
   }
 
   return (
