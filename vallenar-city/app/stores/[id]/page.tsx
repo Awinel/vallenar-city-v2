@@ -3,17 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-// interface StorePageProps {
-//   params: { id: string };
-// }
-
-export default async function StorePage({
-  params,
-}: {
+interface StorePageProps {
   params: { id: string };
-}) {
-  console.log("Params received:", params); // Debugging
-  const store = await fetchStoreById(params.id);
+}
+
+export default async function StorePage({ params }: StorePageProps) {
+  // const store = await fetchStoreById(params.id);
+  const { id } = await params;
+
+  if (!id) {
+    console.error("Error: Missing store ID in params");
+    return notFound();
+  }
+
+  const store = await fetchStoreById(id);
 
   if (!store) {
     return notFound();
