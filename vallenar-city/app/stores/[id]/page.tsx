@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-interface StorePageProps {
-  params: { id: string };
-}
+// interface StorePageProps {
+//   params: { id: string };
+// }
 
 export default async function StorePage({
   params,
