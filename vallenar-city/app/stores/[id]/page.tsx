@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-interface StorePageProps {
+interface PageProps {
   params: { id: string };
 }
 
-export default async function StorePage({ params }: StorePageProps) {
+export default async function StorePage({ params }: PageProps) {
   // const store = await fetchStoreById(params.id);
   const { id } = await params;
 

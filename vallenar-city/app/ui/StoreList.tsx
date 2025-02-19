@@ -1,4 +1,4 @@
-import StoreCards from "@/app/ui/store/StoreCards";
+import StoreCards from "@/app/ui/CardsClient";
 import { fetchStores } from "@/app/lib/data";
 
 export default async function StoreList() {
