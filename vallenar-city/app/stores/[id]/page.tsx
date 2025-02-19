@@ -7,7 +7,12 @@ interface StorePageProps {
   params: { id: string };
 }
 
-export default async function StorePage({ params }: StorePageProps) {
+export default async function StorePage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  console.log("Params received:", params); // Debugging
   const store = await fetchStoreById(params.id);
 
   if (!store) {
