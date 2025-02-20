@@ -27,11 +27,12 @@ export type Event = {
     name: string
     type: string
     address: string
-    adressNumber: string
-    date: string
+    addressnumber: string
+    date: any
     phone: number
     description: string
     image: string
+    creation_date?: any
 };
 
 export type Publication = {

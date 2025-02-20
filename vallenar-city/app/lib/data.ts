@@ -1,3 +1,4 @@
+
 import postgres from "postgres";
 import { Event, Publication, Store, User } from "./definitions";
 
@@ -7,12 +8,21 @@ export async function fetchCalendarEvents() {
     try {
         const data = await sql<Event[]>`SELECT * FROM calendar`;
 
-        return data;
+        return data.map(event => ({
+            ...event,
+            date: typeof event.date === "object" && event.date instanceof Date 
+                ? event.date.toISOString().split("T")[0] // Extract only YYYY-MM-DD
+                : event.date,
+            creation_date: typeof event.creation_date === "object" && event.creation_date instanceof Date 
+                ? event.creation_date.toISOString().split("T")[0] // Extract only YYYY-MM-DD
+                : event.creation_date,
+        }));
     } catch (error) {
-        console.error('Database Error:', error);
+        console.error("Database Error:", error);
         throw new Error("Failed to fetch calendar data.");
     }
 }
+
 
 export async function fetchStores() {
     try {

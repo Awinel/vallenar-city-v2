@@ -1,4 +1,4 @@
-import { lilitaOne } from "../ui/fonts";
+import { lilitaOne } from "@/app/ui/fonts";
 
 export default function Page() {
   return (

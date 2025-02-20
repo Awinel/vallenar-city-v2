@@ -19,9 +19,9 @@ export default function SideNav() {
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />
-        <div className="hidden h-auto w-full grow rounded-md bg-amber-100 md:block"></div>
+        <div className="hidden grow rounded-md bg-amber-100 md:block"></div>
         <form>
-          <button className="flex h-[110px] w-full grow items-center justify-center gap-2 rounded-md bg-amber-200 p-3 text-sm font-medium hover:bg-[var(--color-05)] hover:text-[var(--black)] md:flex-none md:justify-start md:p-2 md:px-3">
+          <button className="flex h-[110px] md:h-auto w-full items-center justify-center gap-2 rounded-md bg-amber-200 p-3 text-sm font-medium hover:bg-[var(--color-05)] hover:text-[var(--black)] md:flex-none md:justify-start md:p-2 md:px-3">
             <div className="md:block">Sign Out</div>
           </button>
         </form>
