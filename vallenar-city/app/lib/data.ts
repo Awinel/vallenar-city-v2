@@ -6,7 +6,7 @@ const sql = postgres(process.env.POSTGRES_URL!,  { ssl: 'require' });
 
 export async function fetchCalendarEvents() {
     try {
-        const data = await sql<Event[]>`SELECT * FROM calendar`;
+        const data = await sql<Event[]>`SELECT * FROM calendar WHERE EXTRACT(YEAR FROM date) = EXTRACT(YEAR FROM CURRENT_DATE) ORDER BY EXTRACT(MONTH FROM date)`;
 
         return data.map(event => ({
             ...event,

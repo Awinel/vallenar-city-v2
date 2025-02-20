@@ -1,22 +1,36 @@
 import { Event } from "@/app/lib/definitions";
 import React from "react";
+import { formatDate } from "@/app/lib/DateFormatted";
 
 const EventDisplayCard = ({
-  id,
   address,
   addressnumber,
   date,
   description,
-  image,
   name,
   phone,
   type,
 }: Event) => {
+  const formattedDate = formatDate(date);
+
   return (
-    <div>
+    <div className="flex flex-col bg-[var(--color-05)] p-2 rounded-xl shadow-amber-950 shadow-lg">
+      <h2 className="text-xl">
+        {formattedDate.month} {formattedDate.day}
+      </h2>
+      <h3 className="text-lg font-normal">{name}</h3>
       <p>
-        {id}, {address}, {addressnumber}, {date}, {description}, {image}, {name}
-        , {phone}, {type}
+        <strong>Type of Event:</strong> {type}
+      </p>
+      <p>
+        <strong>Where:</strong> {address}, {addressnumber}
+      </p>
+      <p>
+        <strong>Description:</strong>
+        {description}
+      </p>
+      <p>
+        <strong>Phone:</strong> {phone}
       </p>
     </div>
   );
