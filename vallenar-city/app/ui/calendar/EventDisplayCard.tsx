@@ -1,6 +1,6 @@
+import { formatDate } from "@/app/lib/dateFormatted";
 import { Event } from "@/app/lib/definitions";
 import React from "react";
-import { formatDate } from "@/app/lib/DateFormatted";
 
 const EventDisplayCard = ({
   address,

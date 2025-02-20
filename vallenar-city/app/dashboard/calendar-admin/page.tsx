@@ -1,5 +1,4 @@
 import { fetchCalendarEvents } from "@/app/lib/data";
-import { formatDate } from "@/app/lib/DateFormatted";
 import EventDisplayCard from "@/app/ui/calendar/EventDisplayCard";
 import { lilitaOne } from "@/app/ui/fonts";
 
