@@ -6,8 +6,8 @@ export default async function StylePage() {
 
   return (
     <div>
-      <h1 className={`text-2xl text-center`}>Style</h1>
-      <div className="flex flex-wrap justify-evenly">
+      <h1 className={`text-2xl`}>Style</h1>
+      <div className="flex flex-wrap justify-evenly mt-5">
         {styles.map((style) => (
           <StyleDisplayCard
             key={style.id}
