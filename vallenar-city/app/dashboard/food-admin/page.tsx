@@ -1,30 +1,14 @@
-import { fetchFood } from "@/app/lib/data";
-import FoodDisplayCard from "@/app/ui/food/FoodDisplayCard";
+import FoodList from "@/app/components/FoodList";
+import CircularProgress from "@/app/ui/Skeletons";
+import { Suspense } from "react";
 
-export default async function StorePage() {
-  const food = await fetchFood();
-
+export default async function FoodPage() {
   return (
     <div>
       <h1 className={`text-2xl`}>Food</h1>
-      <div className="flex flex-wrap justify-evenly mt-5">
-        {food.map((singleFood) => (
-          <FoodDisplayCard
-            key={singleFood.id}
-            id={singleFood.id}
-            name={singleFood.name}
-            address={singleFood.address}
-            addressnumber={singleFood.addressnumber}
-            description={singleFood.description}
-            image={singleFood.image}
-            phone={singleFood.phone}
-            type={singleFood.type}
-            email={singleFood.email}
-            facebook={singleFood.facebook}
-            instagram={singleFood.instagram}
-          />
-        ))}
-      </div>
+      <Suspense fallback={<CircularProgress />}>
+        <FoodList />
+      </Suspense>
     </div>
   );
 }

@@ -1,29 +1,17 @@
+import PublicationList from "@/app/components/PublicationList";
 import { fetchPublications } from "@/app/lib/data";
-import PublicationDisplayCard from "@/app/ui/publications/PublicationDisplayCard";
+import CircularProgress from "@/app/ui/Skeletons";
+import { Suspense } from "react";
 
-export default async function StylePage() {
+export default async function PublicationsPage() {
   const publications = await fetchPublications();
 
   return (
     <div>
       <h1 className={`text-2xl`}>Publications</h1>
-      <div className="flex flex-wrap justify-evenly mt-5">
-        {publications.map((publication) => (
-          <PublicationDisplayCard
-            key={publication.id}
-            id={publication.id}
-            address={publication.address}
-            addressnumber={publication.addressnumber}
-            type={publication.type}
-            title={publication.title}
-            price={publication.price}
-            phone={publication.phone}
-            userId={publication.userId}
-            description={publication.description}
-            image={publication.image}
-          />
-        ))}
-      </div>
+      <Suspense fallback={<CircularProgress />}>
+        <PublicationList />
+      </Suspense>
     </div>
   );
 }

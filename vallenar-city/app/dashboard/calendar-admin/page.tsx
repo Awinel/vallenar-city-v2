@@ -1,29 +1,17 @@
-import { fetchCalendarEvents } from "@/app/lib/data";
-import EventDisplayCard from "@/app/ui/calendar/EventDisplayCard";
+import { Suspense } from "react";
 import { lilitaOne } from "@/app/ui/fonts";
+import CircularProgress from "@/app/ui/Skeletons";
+import EventsList from "@/app/components/EventList";
 
-export default async function EventPage() {
-  const events = await fetchCalendarEvents();
-
+export default function EventPage() {
   return (
     <div>
       <h1 className={`${lilitaOne.className} text-2xl`}>Events</h1>
-      <div className="flex flex-wrap justify-evenly mt-5">
-        {events.map((event) => (
-          <EventDisplayCard
-            key={event.id}
-            id={event.id}
-            name={event.name}
-            type={event.type}
-            date={event.date}
-            address={event.address}
-            addressnumber={event.addressnumber}
-            description={event.description}
-            image={event.image}
-            phone={event.phone}
-          />
-        ))}
-      </div>
+
+      {/* Wrap the async component in Suspense */}
+      <Suspense fallback={<CircularProgress />}>
+        <EventsList />
+      </Suspense>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function CircularProgress() {
+function CircularProgress() {
   return (
     <div className="flex justify-center content-center h-[500px]">
       <Image
@@ -15,3 +15,5 @@ export default function CircularProgress() {
     </div>
   );
 }
+
+export default CircularProgress;
