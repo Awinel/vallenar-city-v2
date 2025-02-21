@@ -7,6 +7,10 @@ import clsx from "clsx";
 
 const links = [
   {
+    name: "Dashboard",
+    href: "/dashboard",
+  },
+  {
     name: "Calendario",
     href: "/dashboard/calendar-admin",
   },
