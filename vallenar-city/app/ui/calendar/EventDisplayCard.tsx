@@ -26,7 +26,7 @@ const EventDisplayCard = ({
         <strong>Where:</strong> {address}, {addressnumber}
       </p>
       <p>
-        <strong>Description:</strong>
+        <strong>Description: </strong>
         {description}
       </p>
       <p>
