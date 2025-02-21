@@ -7,7 +7,7 @@ export default async function StorePage() {
   return (
     <div>
       <h1 className={`text-2xl text-center`}>Food</h1>
-      <div className="flex ">
+      <div className="flex flex-wrap justify-evenly">
         {food.map((singleFood) => (
           <FoodDisplayCard
             key={singleFood.id}

@@ -8,7 +8,7 @@ export default async function EventPage() {
   return (
     <div>
       <h1 className={`${lilitaOne.className} text-2xl text-center`}>Events</h1>
-      <div className="flex">
+      <div className="flex flex-wrap justify-evenly">
         {events.map((event) => (
           <EventDisplayCard
             key={event.id}
