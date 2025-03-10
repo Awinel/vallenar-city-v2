@@ -2,19 +2,20 @@ import { Store } from "@/app/lib/definitions";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CardsClient({ id, name, image }: Store) {
+export default function CardsClient({ id, name, description, image }: Store) {
   return (
     <Link href={`/stores/${id}`} passHref>
-      <div className="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white p-4 m-5 hover:scale-110 transition cursor-pointer max-h-[400px]">
+      <div className="flex flex-col justify-center items-center w-[300px] h-[300px] rounded-lg overflow-hidden shadow-lg bg-white p-4 m-5 hover:scale-110 transition cursor-pointer">
         <Image
-          className="w-full rounded-md"
+          className="rounded-md"
           src={`/img/${image}`}
           alt={name}
-          width={300}
+          width={200}
           height={200}
         />
         <div className="px-4 py-2">
           <h2 className="text-xl font-bold mb-2">{name}</h2>
+          <p className="text-gray-700 text-sm line-clamp-2">{description}</p>
         </div>
       </div>
     </Link>
