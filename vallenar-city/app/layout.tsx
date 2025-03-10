@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vallenar City",
+  title: {
+    template: "%s | Vallenar City",
+    default: "Vallenar City",
+  },
   description: "Pagina Web para la Ciudad de Vallenar, Chile. ",
 };
 

@@ -1,13 +1,12 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import { Nav } from "../ui/nav";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Usuarios",
+};
 export default function Home() {
   return (
     <main>
-      <Header />
-      <Nav />
-      <Footer />
+      <h1>Usuarios</h1>
     </main>
   );
 }
