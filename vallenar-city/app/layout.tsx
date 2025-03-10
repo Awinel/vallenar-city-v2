@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     default: "Vallenar City",
   },
   description: "Pagina Web para la Ciudad de Vallenar, Chile. ",
+  icons: "logo.svg",
 };
 
 export default function RootLayout({
