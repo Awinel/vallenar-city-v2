@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import { Nav } from "../ui/nav";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Vallenar City",
   description: "Pagina Web para la Ciudad de Vallenar, Chile. ",
 };
 
-export default function Layout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <Header />
-      <Nav />
-      {children}
-      <Footer />
-    </>
+    <html lang="en">
+      <body className="">{children}</body>
+    </html>
   );
 }
