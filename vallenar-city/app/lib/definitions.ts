@@ -2,6 +2,7 @@ import { PublicationTypes } from "./types";
 
 export type User = {
     id: string;
+    password: string;
     username: string;
     name: string;
     email: string;

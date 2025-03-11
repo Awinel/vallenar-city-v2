@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NavLinks from "../ui/dashboard/nav-links";
 import Image from "next/image";
+import { signOut } from "@/auth";
 
 export default function SideNav() {
   return (
@@ -20,7 +21,12 @@ export default function SideNav() {
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />
         <div className="hidden grow rounded-md bg-amber-100 md:block"></div>
-        <form>
+        <form
+          action={async () => {
+            "use server";
+            await signOut({ redirectTo: "/" });
+          }}
+        >
           <button className="flex h-[110px] md:h-auto w-full items-center justify-center gap-2 rounded-md bg-amber-200 p-3 text-sm font-medium hover:bg-[var(--color-05)] hover:text-[var(--black)] md:flex-none md:justify-start md:p-2 md:px-3">
             <div className="md:block">Sign Out</div>
           </button>

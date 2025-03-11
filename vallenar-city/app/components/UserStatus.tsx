@@ -1,6 +1,8 @@
 "use client";
 import { lilitaOne } from "../ui/fonts";
 import { UserStatusProps } from "../lib/definitions";
+import Link from "next/link";
+
 const UserStatus = (props: UserStatusProps) => {
   return (
     <div
@@ -9,7 +11,9 @@ const UserStatus = (props: UserStatusProps) => {
       {props.isAuthenticated ? (
         <button>Sign Out</button>
       ) : (
-        <button>Log In</button>
+        <Link href="/login">
+          <button>Log In</button>
+        </Link>
       )}
     </div>
   );
